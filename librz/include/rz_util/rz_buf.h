@@ -392,9 +392,9 @@ static inline ut8 rz_buf_peek(RZ_NONNULL RzBuffer *b) {
 
 // sparse-specific
 
-RZ_API const RzBufferSparseChunk *rz_buf_sparse_get_chunks(RzBuffer *b, RZ_NONNULL size_t *count);
+RZ_API const RzBufferSparseChunk *rz_buf_sparse_get_chunks(const RzBuffer *b, RZ_NONNULL size_t *count);
 RZ_API void rz_buf_sparse_set_write_mode(RzBuffer *b, RzBufferSparseWriteMode mode);
-RZ_API bool rz_buf_sparse_populated_in(RzBuffer *b, ut64 from, ut64 to);
+RZ_API bool rz_buf_sparse_populated_in(const RzBuffer *b, ut64 from, ut64 to);
 
 RZ_API bool rz_deflatew_buf(RZ_NONNULL RzBuffer *src, RZ_NONNULL RzBuffer *dst, ut64 block_size, ut8 *src_consumed, int wbits);
 RZ_API bool rz_deflate_buf(RZ_NONNULL RzBuffer *src, RZ_NONNULL RzBuffer *dst, ut64 block_size, ut8 *src_consumed);
