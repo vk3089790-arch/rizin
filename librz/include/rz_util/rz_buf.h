@@ -21,7 +21,7 @@ typedef bool (*RzBufferInit)(RzBuffer *b, const void *user);
 typedef bool (*RzBufferFini)(RzBuffer *b);
 typedef st64 (*RzBufferRead)(RZ_BORROW RzBuffer *b, RZ_OUT ut8 *buf, ut64 len);
 typedef st64 (*RzBufferWrite)(RzBuffer *b, const ut8 *buf, ut64 len);
-typedef ut64 (*RzBufferGetSize)(RzBuffer *b);
+typedef ut64 (*RzBufferGetSize)(const RzBuffer *b);
 typedef bool (*RzBufferResize)(RzBuffer *b, ut64 newsize);
 typedef st64 (*RzBufferSeek)(RzBuffer *b, st64 addr, int whence);
 typedef ut8 *(*RzBufferGetWholeBuf)(RzBuffer *b, ut64 *sz);
@@ -151,7 +151,7 @@ RZ_API st64 rz_buf_read_at(RZ_NONNULL RzBuffer *b, ut64 addr, RZ_NONNULL RZ_OUT 
 RZ_API st64 rz_buf_seek(RZ_NONNULL RzBuffer *b, st64 addr, int whence);
 RZ_API st64 rz_buf_write(RZ_NONNULL RzBuffer *b, RZ_NONNULL const ut8 *buf, ut64 len);
 RZ_API st64 rz_buf_write_at(RZ_NONNULL RzBuffer *b, ut64 addr, RZ_NONNULL const ut8 *buf, ut64 len);
-RZ_API ut64 rz_buf_size(RZ_NONNULL RzBuffer *b);
+RZ_API ut64 rz_buf_size(RZ_NONNULL const RzBuffer *b);
 RZ_API ut64 rz_buf_tell(RZ_NONNULL RzBuffer *b);
 RZ_API void rz_buf_free(RzBuffer *b);
 RZ_API void rz_buf_set_overflow_byte(RZ_NONNULL RzBuffer *b, ut8 Oxff);

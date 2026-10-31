@@ -186,7 +186,7 @@ static bool buf_sparse_resize(RzBuffer *b, ut64 newsize) {
 	return true;
 }
 
-static ut64 buf_sparse_size(RzBuffer *b) {
+static ut64 buf_sparse_size(const RzBuffer *b) {
 	SparsePriv *priv = get_priv_sparse(b);
 	ut64 max;
 	ut64 r = sparse_limits(priv, &max) ? max : 0;

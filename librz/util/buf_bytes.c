@@ -17,7 +17,7 @@ struct buf_bytes_priv {
 	bool is_bufowner;
 };
 
-static inline struct buf_bytes_priv *get_priv_bytes(RzBuffer *b) {
+static inline struct buf_bytes_priv *get_priv_bytes(const RzBuffer *b) {
 	struct buf_bytes_priv *priv = (struct buf_bytes_priv *)b->priv;
 	rz_warn_if_fail(priv);
 	return priv;
@@ -100,7 +100,7 @@ static st64 buf_bytes_write(RzBuffer *b, const ut8 *buf, ut64 len) {
 	return len;
 }
 
-static ut64 buf_bytes_get_size(RzBuffer *b) {
+static ut64 buf_bytes_get_size(const RzBuffer *b) {
 	struct buf_bytes_priv *priv = get_priv_bytes(b);
 	return priv->length;
 }

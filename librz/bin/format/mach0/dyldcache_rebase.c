@@ -253,7 +253,7 @@ static st64 buf_write(RzBuffer *b, const ut8 *buf, ut64 len) {
 	return rz_buf_write_at(ctx->cache->buf, ctx->off, buf, len);
 }
 
-static ut64 buf_get_size(RzBuffer *b) {
+static ut64 buf_get_size(const RzBuffer *b) {
 	BufCtx *ctx = b->priv;
 	return rz_buf_size(ctx->cache->buf);
 }

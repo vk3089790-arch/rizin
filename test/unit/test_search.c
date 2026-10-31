@@ -26,7 +26,7 @@ static st64 slow_buf_seek(RzBuffer *b, st64 addr, int whence) {
 	return ctx->offset;
 }
 
-static ut64 slow_buf_get_size(RzBuffer *b) {
+static ut64 slow_buf_get_size(const RzBuffer *b) {
 	return SLOW_BUF_SIZE;
 }
 
